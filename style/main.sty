@@ -1,0 +1,141 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{physiquecours}[2025/09/03 Style for high school physics courses]
+
+% ========== PACKAGES ==========
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[french,english]{babel}
+\RequirePackage{amsmath, amssymb}
+\RequirePackage{siunitx}
+\RequirePackage{geometry}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{tcolorbox}
+\RequirePackage{fancyhdr}
+\RequirePackage{enumitem}
+\RequirePackage{titlesec}
+
+% ========== PAGE LAYOUT ==========
+\geometry{margin=2.5cm}
+\sisetup{locale = FR, detect-all, separate-uncertainty = true}
+
+% ========== HEADER / FOOTER ==========
+\pagestyle{fancy}
+\fancyhf{}
+
+\newcommand{\matiere}{Physique} % default subject
+
+\fancyhead[L]{\textsc{\matiere}}
+\fancyhead[R]{\textsc{Fiche de cours}}
+\fancyfoot[C]{\thepage}
+
+% ========== COLORS ==========
+\definecolor{mainblue}{RGB}{33, 100, 200}
+\definecolor{lightgray}{gray}{0.96}
+\definecolor{attentionred}{RGB}{190, 30, 30}
+\definecolor{remarquegray}{RGB}{100, 100, 100}
+
+% ========== TITLE ==========
+\newcommand{\titre}[2]{%
+  \begin{center}
+    {\Huge\bfseries #1}\\[0.3cm]
+    {\large\itshape #2}
+  \end{center}
+  \vspace{0.5cm}
+  \hrule
+  \vspace{1em}
+}
+
+% ========== CUSTOM BOXES ==========
+\newtcolorbox{definitionBox}{
+  colback=lightgray,
+  colframe=mainblue,
+  title=Définition,
+  fonttitle=\bfseries,
+  boxrule=0.7mm,
+  arc=2mm,
+  top=1mm,
+  bottom=1mm,
+  left=2mm,
+  right=2mm
+}
+
+\newtcolorbox{formuleBox}{
+  colback=white,
+  colframe=mainblue,
+  title=Formule à retenir,
+  fonttitle=\bfseries,
+  boxrule=0.8mm,
+  arc=1mm,
+  top=1mm,
+  bottom=1mm,
+  left=2mm,
+  right=2mm
+}
+
+\newtcolorbox{remarqueBox}{
+  colback=lightgray,
+  colframe=remarquegray,
+  title=Remarque,
+  fonttitle=\bfseries,
+  boxrule=0.5mm,
+  arc=1mm,
+  top=1mm,
+  bottom=1mm,
+  left=2mm,
+  right=2mm
+}
+
+\newtcolorbox{exempleBox}{
+  colback=white,
+  colframe=mainblue,
+  title=Exemple,
+  fonttitle=\bfseries,
+  boxrule=0.7mm,
+  arc=1mm,
+  top=1mm,
+  bottom=1mm,
+  left=2mm,
+  right=2mm
+}
+
+\newtcolorbox{attentionBox}{
+  colback=white,
+  colframe=attentionred,
+  title=⚠️ Attention,
+  fonttitle=\bfseries,
+  boxrule=0.8mm,
+  arc=1mm,
+  top=1mm,
+  bottom=1mm,
+  left=2mm,
+  right=2mm
+}
+
+% ========== CUSTOM COMMANDS ==========
+\newcommand{\definition}[1]{\begin{definitionBox}#1\end{definitionBox}}
+\newcommand{\formule}[1]{\begin{formuleBox}#1\end{formuleBox}}
+\newcommand{\remarque}[1]{\begin{remarqueBox}#1\end{remarqueBox}}
+\newcommand{\exemple}[1]{\begin{exempleBox}#1\end{exempleBox}}
+\newcommand{\attention}[1]{\begin{attentionBox}#1\end{attentionBox}}
+
+% Illustration with caption centered
+\newcommand{\illustration}[2]{%
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{#1} \\
+    \small\textit{#2}
+  \end{center}
+}
+
+% Unit command using siunitx
+\newcommand{\unite}[1]{\si{#1}}
+
+% Section spacing
+\titlespacing*{\section}{0pt}{1.5em}{0.8em}
+
+% ========== START DOCUMENT WITH SUBJECT ==========
+\newcommand{\startdocument}[1]{%
+  \renewcommand{\matiere}{#1}%
+  \begin{document}
+  \thispagestyle{fancy}
+}
