@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{physiquecours}[2025/09/03 Style for high school physics courses]
+\ProvidesPackage{physiquecours}[2025/09/15 Style compact pour cours]
 
 % ========== PACKAGES ==========
 \RequirePackage[utf8]{inputenc}
@@ -16,15 +16,13 @@
 \RequirePackage{titlesec}
 
 % ========== PAGE LAYOUT ==========
-\geometry{margin=2.5cm}
+\geometry{margin=2.2cm}   % marges un peu plus serrées
 \sisetup{locale = FR, detect-all, separate-uncertainty = true}
 
 % ========== HEADER / FOOTER ==========
 \pagestyle{fancy}
 \fancyhf{}
-
-\newcommand{\matiere}{Physique} % default subject
-
+\newcommand{\matiere}{Cours} % default subject
 \fancyhead[L]{\textsc{\matiere}}
 \fancyhead[R]{\textsc{Fiche de cours}}
 \fancyfoot[C]{\thepage}
@@ -38,100 +36,97 @@
 % ========== TITLE ==========
 \newcommand{\titre}[2]{%
   \begin{center}
-    {\Huge\bfseries #1}\\[0.3cm]
-    {\large\itshape #2}
+    {\LARGE\bfseries #1}\\[0.2cm]
+    {\normalsize\itshape #2}
   \end{center}
-  \vspace{0.5cm}
+  \vspace{0.3cm}
   \hrule
-  \vspace{1em}
+  \vspace{0.5em}
 }
 
-% ========== CUSTOM BOXES ==========
+% ========== CUSTOM BOXES (COMPACTES) ==========
 \newtcolorbox{definitionBox}{
-  colback=lightgray,
-  colframe=mainblue,
-  title=Définition,
-  fonttitle=\bfseries,
-  boxrule=0.7mm,
-  arc=2mm,
-  top=1mm,
-  bottom=1mm,
-  left=2mm,
-  right=2mm
+  colback=lightgray, colframe=mainblue,
+  title=Définition, fonttitle=\bfseries,
+  boxrule=0.5mm, arc=1.5mm,
+  top=0.5mm, bottom=0.5mm, left=1.5mm, right=1.5mm
 }
 
 \newtcolorbox{formuleBox}{
-  colback=white,
-  colframe=mainblue,
-  title=Formule à retenir,
-  fonttitle=\bfseries,
-  boxrule=0.8mm,
-  arc=1mm,
-  top=1mm,
-  bottom=1mm,
-  left=2mm,
-  right=2mm
+  colback=white, colframe=mainblue,
+  title=Formule à retenir, fonttitle=\bfseries,
+  boxrule=0.6mm, arc=1mm,
+  top=0.5mm, bottom=0.5mm, left=1.5mm, right=1.5mm
 }
 
 \newtcolorbox{remarqueBox}{
-  colback=lightgray,
-  colframe=remarquegray,
-  title=Remarque,
-  fonttitle=\bfseries,
-  boxrule=0.5mm,
-  arc=1mm,
-  top=1mm,
-  bottom=1mm,
-  left=2mm,
-  right=2mm
+  colback=lightgray, colframe=remarquegray,
+  title=Remarque, fonttitle=\bfseries,
+  boxrule=0.4mm, arc=1mm,
+  top=0.5mm, bottom=0.5mm, left=1.5mm, right=1.5mm
 }
 
 \newtcolorbox{exempleBox}{
-  colback=white,
-  colframe=mainblue,
-  title=Exemple,
-  fonttitle=\bfseries,
-  boxrule=0.7mm,
-  arc=1mm,
-  top=1mm,
-  bottom=1mm,
-  left=2mm,
-  right=2mm
+  colback=white, colframe=mainblue,
+  title=Exemple, fonttitle=\bfseries,
+  boxrule=0.5mm, arc=1mm,
+  top=0.5mm, bottom=0.5mm, left=1.5mm, right=1.5mm
 }
 
 \newtcolorbox{attentionBox}{
-  colback=white,
-  colframe=attentionred,
-  title=⚠️ Attention,
-  fonttitle=\bfseries,
-  boxrule=0.8mm,
-  arc=1mm,
-  top=1mm,
-  bottom=1mm,
-  left=2mm,
-  right=2mm
+  colback=white, colframe=attentionred,
+  title=⚠️ Attention, fonttitle=\bfseries,
+  boxrule=0.6mm, arc=1mm,
+  top=0.5mm, bottom=0.5mm, left=1.5mm, right=1.5mm
 }
 
-% ========== CUSTOM COMMANDS ==========
+% ========== COMMAND SHORTCUTS ==========
 \newcommand{\definition}[1]{\begin{definitionBox}#1\end{definitionBox}}
 \newcommand{\formule}[1]{\begin{formuleBox}#1\end{formuleBox}}
 \newcommand{\remarque}[1]{\begin{remarqueBox}#1\end{remarqueBox}}
 \newcommand{\exemple}[1]{\begin{exempleBox}#1\end{exempleBox}}
 \newcommand{\attention}[1]{\begin{attentionBox}#1\end{attentionBox}}
 
-% Illustration with caption centered
 \newcommand{\illustration}[2]{%
   \begin{center}
-    \includegraphics[width=0.6\textwidth]{#1} \\
+    \includegraphics[width=0.45\textwidth]{#1} \\  % plus compact
     \small\textit{#2}
   \end{center}
 }
 
-% Unit command using siunitx
 \newcommand{\unite}[1]{\si{#1}}
 
-% Section spacing
-\titlespacing*{\section}{0pt}{1.5em}{0.8em}
+% ========== SECTION SPACING ==========
+\titlespacing*{\section}{0pt}{0.8em}{0.5em}
+\titlespacing*{\subsection}{0pt}{0.5em}{0.3em}
+
+% ========== SECTION NUMBERING ==========
+\renewcommand{\thesection}{\Roman{section}}        % I, II, III...
+\renewcommand{\thesubsection}{\Alph{subsection}}   % A, B, C...
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}} % 1, 2, 3...
+\renewcommand{\theparagraph}{\alph{paragraph}}     % a, b, c...
+
+% ========== ENUMERATION PLANS ==========
+\newlist{planI}{enumerate}{1}
+\setlist[planI]{label=\Roman*., left=0pt, itemindent=1.5em}
+
+\newlist{planA}{enumerate}{1}
+\setlist[planA]{label=\Alph*., left=0pt, itemindent=2em}
+
+\newlist{plan1}{enumerate}{1}
+\setlist[plan1]{label=\arabic*., left=0pt, itemindent=2.5em}
+
+\newlist{plana}{enumerate}{1}
+\setlist[plana]{label=\alph*), left=0pt, itemindent=3em}
+
+\providecommand{\planI}[1]{\begin{planI}#1\end{planI}}
+\providecommand{\planA}[1]{\begin{planA}#1\end{planA}}
+\providecommand{\planone}[1]{\begin{plan1}#1\end{plan1}}
+\providecommand{\planautre}[1]{\begin{plana}#1\end{plana}}
+
+% ========== SIMPLE LISTS ==========
+\newenvironment{listeTirets}{\begin{itemize}[label=--]}{\end{itemize}}
+\newenvironment{listePoints}{\begin{itemize}[label=•]}{\end{itemize}}
 
 % ========== START DOCUMENT WITH SUBJECT ==========
 \newcommand{\startdocument}[1]{%
@@ -139,3 +134,5 @@
   \begin{document}
   \thispagestyle{fancy}
 }
+
+\endinput

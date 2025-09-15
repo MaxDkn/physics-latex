@@ -3,16 +3,66 @@
 
 \startdocument{Chimie}
 
-\titre{Chapter 1 - Transformation acido/basique}
-\definition{
-Le \textbf{pH} (potentiel hydrogène) est le taux de concentration d'ions hydrogènes $\text{H}^+$.
-}
+\titre{Chapitre 1 - Transformations acido-basiques}{Introduction à la théorie de Brønsted}
 
-\definition{
-    Le \textbf{pH} (potentiel hydrogène) est le taux de concentration d'ions hydrogènes $\text{H}^+$.}
-\section*{Théorie de Bronsted}
-- Selon Bronsted, un acide est une espèce chimique capable de fournir un proton $\text{H}^+$, et une base est une espèce capable de capter un proton $\text{H}^+$.
-- Une réaction acido-basique est le transfert d'un proton $\text{H}^+$ entre l'acide AH d'un couple et la base B d'un autre couple.
-- Un \textbf{ampholyte} (ou \textbf{amphoyère}) est une espèce à la fois acide et base dans 2 couples différents.
-\example{l'acide éthanoïque : $CH_3COOH / CH_3COO^-$}
+Le \textbf{pH} (potentiel hydrogène) mesure la concentration en ions hydronium $\mathrm{H_3O^+}$, souvent notés $\mathrm{H^+}$.  
+Dans l'eau, $\mathrm{H^+}$ existe essentiellement sous forme d'ion oxonium $\mathrm{H_3O^+}$.
+
+\section*{I - Théorie de Brønsted}
+
+Selon Brønsted, un \textbf{acide} est une espèce chimique capable de \textbf{céder un proton} $\mathrm{H^+}$, tandis qu'une \textbf{base} est une espèce capable de \textbf{cap­ter un proton} $\mathrm{H^+}$.  
+Une réaction acido-basique correspond donc au transfert d'un proton entre l'acide $AH$ d'un couple et la base $B$ d'un autre couple :
+
+\[
+AH \rightleftharpoons A^- + H^+
+\]
+
+Un \textbf{ampholyte} (ou amphotère) est une espèce capable de jouer le rôle d'acide et de base dans deux couples différents.
+
+\exemple{Acide éthanoïque : $CH_3COOH / CH_3COO^-$}
+
+Un \textbf{amphion} est un ampholyte particulier, qui peut se comporter à la fois comme acide et comme base au sein de la même molécule.  
+Par exemple, un acide $\alpha$-aminé :  
+\illustration{/home/gladia/Documents/physics-latex/chapitre-1/img/structure_acide_amine.jpg}{Structure générale d'un acide $\alpha$-aminé}
+La réaction générale entre l'acide d'un couple et la base d'un autre couple s'écrit :
+
+\[
+AH^+ + B^- \rightleftharpoons A + BH
+\]
+
+\section*{II - Autoprotolyse de l'eau}
+
+L'eau est un ampholyte et peut réagir avec elle-même (autoprotolyse) :
+
+\[
+2 H_2O \rightleftharpoons H_3O^+ + HO^-
+\]
+
+Cette réaction n'est pas totale mais elle définit l'équilibre acido-basique de l'eau.
+
+\section*{III - Expressions du pH et produit ionique de l'eau}
+\formule{
+Le \textbf{pH} d'une solution est défini par :
+
+\[
+pH = - \log [H_3O^+]
+\]
+}
+et la concentration en ions hydronium s'écrit :
+
+\[
+[H_3O^+] = C_0 \cdot 10^{-pH}
+\]
+
+Le produit ionique de l'eau est noté $K_e$ :
+
+\[
+K_e = [H_3O^+][HO^-] = 10^{-14} \quad \text{à 25°C}
+\]
+
+On définit aussi :
+
+\[
+pK_e = - \log K_e = 14
+\]
 \end{document}
