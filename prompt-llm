@@ -1,0 +1,99 @@
+# Documentation du style LaTeX physiquecours
+
+Ce document explique comment utiliser le package LaTeX `physiquecours` pour transformer des notes ou textes bruts en cours structurés, lisibles et cohérents. Il est pensé pour qu’un LLM puisse directement suivre les règles et générer du code LaTeX correct.
+
+---
+
+## 1 – Structure générale d’un chapitre
+
+Un chapitre doit suivre une hiérarchie simple :
+
+I - Section principale
+    A) Sous-section
+    B) Sous-section
+II - Section principale
+III - Section principale
+
+Règles :
+
+* Sections principales : I, II, III
+* Sous-sections : A, B, C
+* Pas besoin d aller plus loin (1, a, etc.)
+* Le texte normal est écrit directement, sans box.
+* Les informations importantes (définitions, formules, remarques, exemples, attention) utilisent des boxes.
+
+---
+
+## 2 – Commandes principales
+
+* \definition{...} → pour les définitions importantes
+  Exemple : Le pH mesure la concentration en ions H3O+.
+
+* \formule{...} → pour les formules à retenir
+  Exemple : pH = - log\[H3O+]
+
+* \remarque{...} → pour des remarques complémentaires
+  Exemple : Le pH varie de 0 à 14.
+
+* \exemple{...} → pour des exemples concrets
+  Exemple : Acide éthanoïque : CH3COOH / CH3COO-
+
+* \attention{...} → pour souligner un point important
+  Exemple : Ne pas confondre pH et concentration en ions H+.
+
+* \illustration{chemin/image}{légende} → pour insérer une image
+  Exemple : img/ph\_scale.webp, Échelle de pH : acide (<7), neutre (=7), basique (>7)
+
+> ⚠️ Les chemins d image doivent être relatifs au fichier .tex.
+
+---
+
+## 3 – Transformation d’un texte brut en LaTeX
+
+Pour un LLM :
+
+1. Identifier les phrases clés.
+
+   * Définitions → \definition{}
+   * Formules → \formule{}
+   * Exemples → \exemple{}
+   * Remarques → \remarque{}
+   * Points critiques → \attention{}
+2. Grouper le texte en sections I, II, III et sous-sections A, B, C selon le sujet.
+3. Le texte normal reste tel quel, en dehors des boxes.
+4. Ajouter des images avec \illustration{} si nécessaire.
+
+Exemple de texte brut :
+
+"Le pH mesure la concentration en ions H3O+. L'eau est un ampholyte et peut réagir avec elle-même. La réaction n'est pas totale. Formule : 2 H2O ↔ H3O+ + HO-. On peut représenter l'échelle de pH."
+
+Conversion LaTeX :
+
+I - Généralités sur le pH
+\definition{Le pH mesure la concentration en ions H3O+.}
+
+II - Autoprotolyse de l’eau
+\definition{L’eau est un ampholyte et peut réagir avec elle-même.}
+\formule{2 H2O ↔ H3O+ + HO-}
+
+III - Complément
+\illustration{img/ph\_scale.webp}{Échelle de pH : acide (<7), neutre (=7), basique (>7)}
+
+---
+
+## 4 – Bonnes pratiques
+
+* Utiliser les boxes uniquement pour l information importante.
+* Ne pas créer de sous-niveaux trop profonds.
+* Laisser le texte normal pour les explications ou phrases courantes.
+* Vérifier que les images existent au chemin relatif indiqué.
+* Garder la structure I, II, III / A, B, C pour la cohérence.
+
+---
+
+## 5 – Résultat attendu
+
+* Cours lisible, structuré et cohérent.
+* Sections hiérarchisées I, II, III et A, B, C.
+* Définitions, formules, remarques et exemples bien mis en valeur.
+* Images correctement insérées avec légende.
