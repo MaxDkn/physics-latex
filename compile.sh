@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CHAPDIR="chapitre-1"
+CHAPDIR="chapitre-2"
 FILE="main.tex"
 OUTPUTDIR="pdf"
 OUTPUTNAME="$CHAPDIR.pdf"

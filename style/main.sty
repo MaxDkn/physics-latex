@@ -26,6 +26,7 @@
 \fancyhead[L]{\textsc{\matiere}}
 \fancyhead[R]{\textsc{Fiche de cours}}
 \fancyfoot[C]{\thepage}
+\setlength{\headheight}{15pt}
 
 % ========== COLORS ==========
 \definecolor{mainblue}{RGB}{33, 100, 200}
@@ -97,14 +98,33 @@
 \newcommand{\unite}[1]{\si{#1}}
 
 % ========== SECTION SPACING ==========
-\titlespacing*{\section}{0pt}{0.8em}{0.5em}
-\titlespacing*{\subsection}{0pt}{0.5em}{0.3em}
+\titlespacing*{\section}{0pt}{0.8em}{0.5em}      % Section : marge avant/après
+\titlespacing*{\subsection}{0pt}{0.5em}{0.3em}  % Sous-section : marge avant/après
+\titlespacing*{\subsubsection}{0pt}{0.3em}{0.2em} % Sous-sous-section
 
 % ========== SECTION NUMBERING ==========
-\renewcommand{\thesection}{\Roman{section}}        % I, II, III...
-\renewcommand{\thesubsection}{\Alph{subsection}}   % A, B, C...
+\renewcommand{\thesection}{\Roman{section}}          % I, II, III...
+\renewcommand{\thesubsection}{\Alph{subsection}}     % A, B, C...
 \renewcommand{\thesubsubsection}{\arabic{subsubsection}} % 1, 2, 3...
-\renewcommand{\theparagraph}{\alph{paragraph}}     % a, b, c...
+\renewcommand{\theparagraph}{\alph{paragraph}}       % a, b, c...
+
+% ========== SECTION FORMATTING ==========
+\usepackage{titlesec}
+
+% Sections principales (I, II, III) : gras et légèrement plus grand, numéro décalé
+\titleformat{\section}
+  {\bfseries\large}         % texte en gras et légèrement plus grand
+  {\thesection}{1em}{}       % 1em = espace entre numéro et titre
+
+% Sous-sections (A, B, C) : normal mais avec parenthèses pour distinction
+\titleformat{\subsection}
+  {\large\bfseries}          % texte en gras mais un peu plus petit que section
+  {(\thesubsection)}{0.5em}{}  % affiche (A), (B), ...
+
+% Sous-sous-sections (1, 2, 3) : italique pour distinction
+\titleformat{\subsubsection}
+  {\normalsize\itshape}      % italique pour les sous-sous-sections
+  {\thesubsubsection.}{0.5em}{}
 
 % ========== ENUMERATION PLANS ==========
 \newlist{planI}{enumerate}{1}

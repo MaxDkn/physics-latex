@@ -4,7 +4,7 @@ Ce document explique comment utiliser le package LaTeX `physiquecours` pour tran
 
 ---
 
-## 1 – Structure générale d’un chapitre
+## 1 - Structure générale d'un chapitre
 
 Un chapitre doit suivre une hiérarchie simple :
 
@@ -24,7 +24,7 @@ Règles :
 
 ---
 
-## 2 – Commandes principales
+## 2 - Commandes principales
 
 * \definition{...} → pour les définitions importantes
   Exemple : Le pH mesure la concentration en ions H3O+.
@@ -48,7 +48,7 @@ Règles :
 
 ---
 
-## 3 – Transformation d’un texte brut en LaTeX
+## 3 - Transformation d'un texte brut en LaTeX
 
 Pour un LLM :
 
@@ -72,8 +72,8 @@ Conversion LaTeX :
 I - Généralités sur le pH
 \definition{Le pH mesure la concentration en ions H3O+.}
 
-II - Autoprotolyse de l’eau
-\definition{L’eau est un ampholyte et peut réagir avec elle-même.}
+II - Autoprotolyse de l'eau
+\definition{L'eau est un ampholyte et peut réagir avec elle-même.}
 \formule{2 H2O ↔ H3O+ + HO-}
 
 III - Complément
@@ -81,7 +81,7 @@ III - Complément
 
 ---
 
-## 4 – Bonnes pratiques
+## 4 - Bonnes pratiques
 
 * Utiliser les boxes uniquement pour l information importante.
 * Ne pas créer de sous-niveaux trop profonds.
@@ -91,7 +91,7 @@ III - Complément
 
 ---
 
-## 5 – Résultat attendu
+## 5 - Résultat attendu
 
 * Cours lisible, structuré et cohérent.
 * Sections hiérarchisées I, II, III et A, B, C.

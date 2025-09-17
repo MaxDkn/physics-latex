@@ -1,7 +1,155 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage{style/main}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
 
-\startdocument{Physique}
+\startdocument{Chimie}
 
+\titre{Chapitre 2 - Méthodes physiques d'analyse}{Spectroscopie et conductimétrie}
 
+\section*{I - Rappels: Spectre et couleurs}
+\subsection*{A - Rappels de secondes}
+La couleur perçue correspond à la partie de la lumière \textbf{réfléchie ou transmise}, c'est-à-dire celle qui n'est pas absorbée.  
+\\Le spectre visible s'étend de \textbf{400 nm (violet)} à \textbf{800 nm (rouge)}.
+\subsection*{B - Nomenclature}
+\vspace{3\baselineskip}
+\subsection*{C - Lien entre couleur et structure moléculaire}
+
+Plus une molécule comporte de \textbf{liaisons doubles conjuguées}, plus elle absorbe à \textbf{grande longueur d'onde}.  
+\\La présence de certains \textbf{groupes} (OH, NH$_2$, NO$_2$, ou certains halogènes) influe le domaine d'absorption des molécules.
+\vspace{1\baselineskip}
+\section*{II - Spectroscopie UV-Visible}
+\subsection*{A - Abosrbance et Loi de Beer-Lambert}
+
+\formule{
+L'absorbance $A$ est reliée à la concentration par la loi de Beer-Lambert :
+
+\[
+A =
+\begin{tikzpicture}[baseline=(current bounding box.center)]
+\node (vals) {
+$\begin{array}{l}
+\varepsilon_\lambda \\
+l \\
+c
+\end{array}$
+};
+\draw[decorate,decoration={brace,mirror,amplitude=7pt}] 
+(vals.north west) -- (vals.south west) node[midway,xshift=-1.2cm] {Paramètres};
+\node[right=1.5cm of vals.east, anchor=west] {
+$\begin{array}{l}
+\text{coeff d'extinction molaire (L·mol$^{-1}$·cm$^{-1}$)} \\
+\text{largeur de la cuve (cm)} \\
+\text{concentration molaire (mol·L$^{-1}$)}
+\end{array}$
+};
+\end{tikzpicture}
+\]
+}
+
+\subsection*{B - Spectrophotométrie}
+La spectrophotométrie est la mesure du spectre d'absorbance à l'aide d'un spectrophotomètre.  
+La grandeur mesurée est \textbf{l'absorbance A}.
+
+\subsection*{C - Facteurs influençant A}
+L'absorbance dépend :  
+– du coefficient $\varepsilon(\lambda)$,  
+– de la concentration $c$,  
+– de la largeur de cuve $l$,  
+– de l'espèce chimique étudiée.
+
+\subsection*{D - Dosage spectrophotométrique}
+\exemple{
+Procédure :  
+1. Préparer une gamme étalon.  
+2. Mesurer $A = f(\lambda)$.  
+3. Régler sur $\lambda_{max}$ et faire le blanc.  
+4. Mesurer $A$ des solutions étalons et de l'inconnue.  
+5. Tracer $A = f(c)$ et interpoler la concentration inconnue.  
+}
+
+---
+
+\section*{III - Conductivité des solutions électrolytiques}
+
+\subsection*{A - Loi d'Ohm}
+\formule{
+\[
+U = R \cdot I
+\]
+avec $U$ la tension (V), $R$ la résistance ($\Omega$), $I$ l'intensité (A).
+}
+
+\subsection*{B - Conductance}
+\formule{
+\[
+G = \frac{1}{R} = \frac{I}{U}
+\]
+}
+Unité : Siemens (S).
+
+\subsection*{C - Facteurs influençant $G$}
+La conductance dépend :  
+– de la nature des ions,  
+– de la concentration (augmente avec $c$),  
+– de la surface des électrodes,  
+– de la température (mobilité ionique),  
+– de la distance entre électrodes.
+
+\subsection*{D - Conductivité}
+\formule{
+\[
+G = k \cdot \sigma
+\]
+}
+où $\sigma$ est la conductivité (S·m$^{-1}$) et $k$ la constante de cellule.
+
+\subsection*{E - Conductivité molaire ionique}
+\formule{
+\[
+\sigma = \sum_i \lambda_i \cdot [X_i]
+\]
+}
+Chaque ion possède une conductivité molaire ionique propre $\lambda_i$ (loi de Kohlrausch).
+
+\subsection*{F - Dosage conductimétrique}
+\exemple{
+Procédure :  
+1. Préparer une gamme étalon.  
+2. Mesurer $\sigma$ des solutions.  
+3. Tracer $\sigma = f(c)$.  
+4. Déterminer la concentration de l'inconnue par interpolation.  
+}
+
+\subsection*{G - Cas particulier : dosage d'un gaz}
+\formule{
+\[
+PV = nRT
+\]
+}
+À $V$, $R$ et $T$ constants, la pression est proportionnelle à la quantité de matière dissoute.
+
+---
+
+\section*{IV - Spectroscopie infrarouge (IR)}
+
+\subsection*{A - Groupes caractéristiques}
+\formule{
+\[
+E = h \cdot \nu = \frac{h \cdot c}{\lambda}
+\]
+}
+Groupes observables : carboxyle, hydroxyle, carbonyle, amine, ester, alcène…
+
+\subsection*{B - Présentation du spectre}
+Le spectre IR se trace en transmittance en fonction du nombre d'onde $\tilde{\nu}$ (cm$^{-1}$), entre 4000 et 500 cm$^{-1}$.  
+À gauche : grandes énergies (liaisons fortes).  
+À droite : faibles énergies (infrarouge lointain).
+
+\subsection*{C - Origine des bandes IR}
+Les atomes vibrent par :  
+– élongation (liaison qui s'allonge/compresse),  
+– déformation angulaire.  
+Quand l'énergie du rayonnement correspond à celle de
 \end{document}
