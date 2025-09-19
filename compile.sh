@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CHAPDIR="chapitre-2"
+CHAPDIR="protocole"
 FILE="main.tex"
 OUTPUTDIR="pdf"
 OUTPUTNAME="$CHAPDIR.pdf"
