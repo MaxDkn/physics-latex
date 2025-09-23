@@ -3,12 +3,13 @@
 \usepackage{mathtools}
 \usepackage{tikz}
 \usepackage{chemfig}
+\usepackage{multirow}
+\usepackage{adjustbox}
 \usetikzlibrary{decorations.pathreplacing}
 
 \startdocument{Chimie}
 
 \titre{Chapitre 2 - Méthodes physiques d'analyse}{Spectroscopie et conductimétrie}
-\chemfig{*6(------)}
 \section*{I - Rappels: Spectre et couleurs}
 \subsection*{A - Rappels de secondes}
 La couleur perçue correspond à la partie de la lumière \textbf{réfléchie ou transmise}, c'est-à-dire celle qui n'est pas absorbée.  
@@ -103,11 +104,11 @@ G = \sigma \cdot \frac{S}{d} = k\cdot\sigma
 \]
 
 où $\sigma$ est la conductivité (S·m$^{-1}$) et $k$ la constante de cellule.
-\subsection*{E - Grandeur influençant \sigma}
+\subsection*{E - Grandeur influençant $\sigma$}
 
 Les mêmes sauf $d$ et $S$.
 
-\subsection*{F - Conductivité molaire ionique \lambda}
+\subsection*{F - Conductivité molaire ionique $\lambda$}
 
 C'est la conductivité d'une mole d'un ion déterminé.
 Chaque ion possède une conductivité molaire ionique propre
@@ -153,10 +154,7 @@ PV = nRT
 On a la \textbf{relation} fondamentale de \textbf{Planck} :
 \[
 E = h \cdot \nu = \frac{h \cdot c}{\lambda}
-\]
-
-avec :
-\begin{cases}
+\quad \text{avec :}\quad\begin{cases}
     E : \text{énergie d’un photon (J)} \\
     h : \text{constante de Planck } \bigl(6,626 \times 10^{-34}\ \text{J·s}\bigr) \\
     \nu : \text{fréquence de l’onde électromagnétique (Hz)} \\
@@ -164,9 +162,27 @@ avec :
         \bigl(3,00 \times 10^{8}\ \text{m·s}^{-1}\bigr) \\
     \lambda : \text{longueur d’onde (m)}
 \end{cases}
-
-Groupes observables : carboxyle, hydroxyle, carbonyle, amine, ester, alcène…
-\chemfig{C(-[2]H)(-[6]H)(-[0]H)(-[4]H)}
+\]
+\\
+\renewcommand{\arraystretch}{1.5} % hauteur globale légèrement réduite
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|>{\centering\arraybackslash}m{2.5cm}|}
+\hline
+Hydroxyle & Carboxyle & \multicolumn{2}{c|}{Carbonyle} & Amine & Ester & C=C \\
+\hline
+Alcool & Acide carboxylique & Cétone & Aldéhyde & Amine & Ester & Alcène \\
+\hline
+\vspace{0.2em}\chemfig{-[0,0.6]OH}\vspace{0.2em} &
+\vspace{0.2em}\chemfig{-[0,0.6]C(=[225,0.7]O)(-[135,0.7]OH)}\vspace{0.2em} &
+\vspace{0.2em}\chemfig{-[0,0.6]C(=[90,0.6]O)-[0,0.6]}\vspace{0.2em} &
+\vspace{0.2em}\chemfig{-[0,0.6]C(=[225,0.7]O)(-[135,0.7]H)}\vspace{0.2em} &
+\vspace{0.2em}\chemfig{-[0,0.6]NH-[270,0.5]}\vspace{0.2em} &
+\vspace{0.2em}\chemfig{-[0,0.6]C(=[225,0.7]O)(-[135,0.6]O-[0,0.6])}\vspace{0.2em} &
+\vspace{0.2em}\chemfig{C(-[45,0.6])(-[-45,0.6])=[0,0.7]C(-[225,0.6])(-[135,0.6])}\vspace{0.2em} \\
+\hline
+\end{tabular}
+\end{adjustbox}
+\\
 \subsection*{B - Présentation du spectre}
 Le spectre IR se trace en transmittance en fonction du nombre d'onde $\tilde{\nu}$ (cm$^{-1}$), entre 4000 et 500 cm$^{-1}$.  
 À gauche : grandes énergies (liaisons fortes).  

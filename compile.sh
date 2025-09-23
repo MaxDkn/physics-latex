@@ -8,7 +8,6 @@ OUTPUTNAME="$CHAPDIR.pdf"
 mkdir -p "$OUTPUTDIR"
 
 pdflatex "$CHAPDIR/$FILE"
-pdflatex "$CHAPDIR/$FILE"
 
 
 mv main.pdf "$OUTPUTDIR/$OUTPUTNAME"
